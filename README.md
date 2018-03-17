@@ -80,35 +80,35 @@ The following images show the sample image take by the drone, the labelled groun
 **Hero in the image**
 
 [image_2]: ./docs/misc/follow_target1.png
-![alt_text][image2]
+![alt_text][image_2]
 
 [image_3]: ./docs/misc/follow_target2.png
-![alt_text][image3]
+![alt_text][image_3]
 
 [image_4]: ./docs/misc/follow_target3.png
-![alt_text][image3]
+![alt_text][image_4]
 
 **No hero in image**
 
 [image_5]: ./docs/misc/follow_nontarget1.png
-![alt_text][image5]
+![alt_text][image_5]
 
 [image_6]: ./docs/misc/follow_nontarget2.png
-![alt_text][image6]
+![alt_text][image_6]
 
 [image_7]: ./docs/misc/follow_nontarget3.png
-![alt_text][image7]
+![alt_text][image_7]
 
 **Hero at distance**
 
 [image_8]: ./docs/misc/follow_targetdistance1.png
-![alt_text][image8]
+![alt_text][image_8]
 
 [image_9]: ./docs/misc/follow_targetdistance2.png
-![alt_text][image9]
+![alt_text][image_9]
 
 [image_10]: ./docs/misc/follow_targetdistance3.png
-![alt_text][image10]
+![alt_text][image_10]
 
 ## Future Improvements ##
 *1. Model architecture and hyperparameters can be tuned to improve the overall score.
