@@ -31,7 +31,6 @@ We introduce skip connections between some encoder and decoder layers to improve
 ## Training, Predicting and Scoring ##
 ### Hyperparameters ###
 The modle has the following hyperparameters that can be tuned to get a good prediction and to prevent overfitting while training.
-<<<<<<< HEAD
 
 **Optimzer Algorithm**
 Due to the large size of the dataset, it makes sense to use a mini-batch gradient descent method. I used `Adam` optimizer algorithm which uses `momentum` to speed up convergence. This is also an `Adaptive Gradient Algorithm` that maintains a per-parameter learning rate. 
