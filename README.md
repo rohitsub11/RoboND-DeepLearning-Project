@@ -73,7 +73,7 @@ The final score is the pixelwise `average_IoU*(n_true_positive/(n_true_positive+
 
 | Learning rate |	Batch size |	Optimizer |	number of epochs	| Steps per epoch |	validation steps per epoch |	iou1o | iou1h |	iou2o |	iou2h |	iou3o |	iou3h	| finalIOU |	finalScore |
 | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-|0.004 |	30 |	Adam |	40 |	200 |	50 |	0.29 |	0.81 |	0.71 |	0 |	0.38 |	0.11 |	0.46 |	0.33 |
+|0.004 |	30 |	Adam |	40 |	200 |	50 |	0.37 |	0.91 |	0.74 |	0 |	0.44 |	0.22 |	0.57 |	0.42 |
 
 The following images show the sample image take by the drone, the labelled ground truth and the prediction of the model. The hero is labelled in blue and others are in green. Red is background.
 
@@ -111,6 +111,6 @@ The following images show the sample image take by the drone, the labelled groun
 ![alt_text][image_10]
 
 ## Future Improvements ##
-*1. Model architecture and hyperparameters can be tuned to improve the overall score.
+1. Model architecture and hyperparameters can be tuned to improve the overall score.
 
-*2. Implement data augmentation techniques to increas the data.
+2. Implement data augmentation techniques to increas the data.
