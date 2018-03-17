@@ -112,4 +112,5 @@ The following images show the sample image take by the drone, the labelled groun
 
 ## Future Improvements ##
 *1. Model architecture and hyperparameters can be tuned to improve the overall score.
+
 *2. Implement data augmentation techniques to increas the data.
