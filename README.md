@@ -17,16 +17,17 @@ The neural network is implemented in the 'model_training.ipynb' file using Tenso
 This is the image being processed.
 
 **Encoder Layers**
-These layers are convolutional layers that reduce to a deeper 1x1 conv layer. Since these layers preserve spatial information, they are useful in sematic segmentation of images. We use batch normalization in these layers.
+These layers are usually convolutional layers that reduce to a deeper 1x1 conv layer. The encoder hence takes an input image and generates a high dimensional feature vector. They aggregate features at multiple levels. We use `depthwise separable convolutions` for building the encoder layers due to lower computational costs. These comprise of a convolutions performed over each channel of an input layer and followed by a 1x1 convolution that takes the output channels from the previous step and then combines them into an output layer. This leads to a reduction in the number of parameters to be tuned.
 
 **Middle Layer**
-The middle layer is a 1x1 conv layer with a kernel size of 1 and stride of 1. We use batch normalization in this layer.
+The middle layer is a 1x1 conv layer with a kernel size of 1 and stride of 1. We use batch normalization in this layer. We lose spatial information if we feed the output of a convolutional layer into a fully connected layer (since we flatten it into a 2D tensor). This problem is eliminated by introducing this 1x1 convolution.
 
 **Decoder Layers**
-These layers upsample encoded layers back to a higher dimension. The method used for upsampling is called `bilinear upsampling` which is a technique using weighted average of 4 nearest pizels located diagonally to a given pizel to estimate new pixel intesity value. We use batch normalization in these layers.
+These layers upsample encoded layers back to a higher dimension. The method used for upsampling is called `bilinear upsampling` which is a technique using weighted average of 4 nearest pizels located diagonally to a given pizel to estimate new pixel intesity value. We use batch normalization in these layers. Thus the decoder akes a highdimensional feature vector and generates
+a semantic segmentation mask. They decode features aggregated by encoders at multiple levels.
 
 **Skip connections**
-We introduce skip connections between some encoder and decoder layers to improve the resolution of the result.
+Skip connections allow the neural networks to use information from multiple resolutions. In our model, we pass the image through an encoder to extract the features and the through a decoder to get back the original size, but some information might be lost by this. However we introduce skip connections between some encoder and decoder layers to improve the resolution of the result. 
 
 ## Training, Predicting and Scoring ##
 ### Hyperparameters ###
@@ -114,3 +115,5 @@ The following images show the sample image take by the drone, the labelled groun
 1. Model architecture and hyperparameters can be tuned to improve the overall score.
 
 2. Implement data augmentation techniques to increas the data.
+
+3. In this project, the model is performs semantic segmentation with three classes: background, hero, other people. Our model might not work well to detect other classes like: dogs, cats, trees, car etc. This might require a lot more data collection and a model with more layers and/or training effort.
